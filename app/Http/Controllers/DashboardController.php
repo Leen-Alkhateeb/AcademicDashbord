@@ -12,6 +12,10 @@ class DashboardController extends Controller
     public function index()
     {
        
+        $lecturers = Lecturer::all(); 
+        $courses = Course::all();
+        $lectures = Lecture::all();
+        $enrollments = DB::table('course_user')->count();
 
         return view('dashboard', compact('lecturers', 'courses', 'lectures', 'enrollments'));
     }
